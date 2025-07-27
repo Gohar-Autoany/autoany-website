@@ -16,6 +16,15 @@ All colors MUST be HSL.
     --hero-text-muted: 0 0% 100%;
     --hero-glass: 0 0% 100%;
     
+    /* Services section colors */
+    --services-bg: 0 0% 100%;
+    --services-title: 240 25% 16%;
+    --services-subtitle: 215 25% 45%;
+    --services-card-bg: 0 0% 100%;
+    --services-card-border: 215 25% 90%;
+    --services-icon-bg: 245 83% 67%;
+    --services-link: 245 83% 67%;
+    
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 

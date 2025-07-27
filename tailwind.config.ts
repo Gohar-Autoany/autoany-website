@@ -28,6 +28,13 @@ export default {
 				'hero-text-muted': 'hsl(var(--hero-text-muted) / 0.8)',
 				'hero-primary': 'hsl(var(--hero-primary))',
 				'hero-glass': 'hsl(var(--hero-glass) / 0.3)',
+				'services-bg': 'hsl(var(--services-bg))',
+				'services-title': 'hsl(var(--services-title))',
+				'services-subtitle': 'hsl(var(--services-subtitle))',
+				'services-card-bg': 'hsl(var(--services-card-bg))',
+				'services-card-border': 'hsl(var(--services-card-border))',
+				'services-icon-bg': 'hsl(var(--services-icon-bg))',
+				'services-link': 'hsl(var(--services-link))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
