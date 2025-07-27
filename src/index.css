@@ -25,6 +25,15 @@ All colors MUST be HSL.
     --services-icon-bg: 245 83% 67%;
     --services-link: 245 83% 67%;
     
+    /* Statistics section colors */
+    --stats-gradient-start: 238 77% 71%;
+    --stats-gradient-end: 269 46% 68%;
+    --stats-text: 0 0% 100%;
+    --stats-card-bg: 0 0% 100%;
+    --stats-card-border: 0 0% 100%;
+    --stats-number: 0 0% 100%;
+    --stats-label: 0 0% 100%;
+    
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
