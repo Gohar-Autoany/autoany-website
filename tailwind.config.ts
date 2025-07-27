@@ -24,6 +24,10 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				'hero-text': 'hsl(var(--hero-text))',
+				'hero-text-muted': 'hsl(var(--hero-text-muted) / 0.8)',
+				'hero-primary': 'hsl(var(--hero-primary))',
+				'hero-glass': 'hsl(var(--hero-glass) / 0.3)',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -84,11 +88,21 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(-20px)' },
+					'50%': { transform: 'translateY(-30px)' }
+				},
+				'gradient-shift': {
+					'0%, 100%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'gradient-shift': 'gradient-shift 8s ease-in-out infinite'
 			}
 		}
 	},

@@ -8,6 +8,14 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Hero-specific colors */
+    --hero-bg-start: 240 45% 9%;
+    --hero-bg-end: 240 25% 16%;
+    --hero-primary: 245 83% 67%;
+    --hero-text: 0 0% 100%;
+    --hero-text-muted: 0 0% 100%;
+    --hero-glass: 0 0% 100%;
+    
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
