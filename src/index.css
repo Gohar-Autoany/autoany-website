@@ -34,6 +34,16 @@ All colors MUST be HSL.
     --stats-number: 0 0% 100%;
     --stats-label: 0 0% 100%;
     
+    /* Process section colors */
+    --process-bg: 240 25% 98%;
+    --process-title: 240 25% 16%;
+    --process-card-bg: 0 0% 100%;
+    --process-step-bg: 245 83% 67%;
+    --process-step-text: 0 0% 100%;
+    --process-card-title: 240 25% 16%;
+    --process-card-desc: 215 25% 45%;
+    --process-arrow: 245 83% 67%;
+    
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 

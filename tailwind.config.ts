@@ -42,6 +42,14 @@ export default {
 				'stats-card-border': 'hsl(var(--stats-card-border) / 0.2)',
 				'stats-number': 'hsl(var(--stats-number))',
 				'stats-label': 'hsl(var(--stats-label) / 0.9)',
+				'process-bg': 'hsl(var(--process-bg))',
+				'process-title': 'hsl(var(--process-title))',
+				'process-card-bg': 'hsl(var(--process-card-bg))',
+				'process-step-bg': 'hsl(var(--process-step-bg))',
+				'process-step-text': 'hsl(var(--process-step-text))',
+				'process-card-title': 'hsl(var(--process-card-title))',
+				'process-card-desc': 'hsl(var(--process-card-desc))',
+				'process-arrow': 'hsl(var(--process-arrow))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
