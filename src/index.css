@@ -2,140 +2,576 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* autoany Brand Colors & Design System */
 
 @layer base {
   :root {
-    /* Hero-specific colors */
-    --hero-bg-start: 240 45% 9%;
-    --hero-bg-end: 240 25% 16%;
-    --hero-primary: 245 83% 67%;
-    --hero-text: 0 0% 100%;
-    --hero-text-muted: 0 0% 100%;
-    --hero-glass: 0 0% 100%;
-    
-    /* Services section colors */
-    --services-bg: 0 0% 100%;
-    --services-title: 240 25% 16%;
-    --services-subtitle: 215 25% 45%;
-    --services-card-bg: 0 0% 100%;
-    --services-card-border: 215 25% 90%;
-    --services-icon-bg: 245 83% 67%;
-    --services-link: 245 83% 67%;
-    
-    /* Statistics section colors */
-    --stats-gradient-start: 238 77% 71%;
-    --stats-gradient-end: 269 46% 68%;
-    --stats-text: 0 0% 100%;
-    --stats-card-bg: 0 0% 100%;
-    --stats-card-border: 0 0% 100%;
-    --stats-number: 0 0% 100%;
-    --stats-label: 0 0% 100%;
-    
-    /* Process section colors */
-    --process-bg: 240 25% 98%;
-    --process-title: 240 25% 16%;
-    --process-card-bg: 0 0% 100%;
-    --process-step-bg: 245 83% 67%;
-    --process-step-text: 0 0% 100%;
-    --process-card-title: 240 25% 16%;
-    --process-card-desc: 215 25% 45%;
-    --process-arrow: 245 83% 67%;
-    
+    /* autoany Brand Colors */
+    --brand-teal: 193 68% 55%; /* #41B8D5 */
+    --brand-black: 0 0% 0%; /* #000000 */
+    --brand-white: 0 0% 100%; /* #FFFFFF */
+
+    /* Hero-specific colors - Updated for brand */
+    --hero-bg-start: 0 0% 5%; /* Almost black */
+    --hero-bg-end: 0 0% 10%; /* Dark gray */
+    --hero-primary: 193 68% 55%; /* Brand teal */
+    --hero-text: 0 0% 100%; /* White */
+    --hero-text-muted: 0 0% 85%; /* Light gray */
+    --hero-glass: 0 0% 100%; /* White */
+
+    /* Services section colors - Updated for brand */
+    --services-bg: 0 0% 100%; /* White */
+    --services-title: 0 0% 0%; /* Black */
+    --services-subtitle: 0 0% 40%; /* Dark gray */
+    --services-card-bg: 0 0% 100%; /* White */
+    --services-card-border: 193 68% 90%; /* Light teal */
+    --services-icon-bg: 193 68% 55%; /* Brand teal */
+    --services-link: 193 68% 55%; /* Brand teal */
+
+    /* Statistics section colors - Updated for brand */
+    --stats-gradient-start: 193 68% 55%; /* Brand teal */
+    --stats-gradient-end: 193 68% 45%; /* Darker teal */
+    --stats-text: 0 0% 100%; /* White */
+    --stats-card-bg: 0 0% 100%; /* White */
+    --stats-card-border: 0 0% 100%; /* White */
+    --stats-number: 0 0% 100%; /* White */
+    --stats-label: 0 0% 100%; /* White */
+
+    /* Process section colors - Updated for brand */
+    --process-bg: 193 68% 97%; /* Very light teal */
+    --process-title: 0 0% 0%; /* Black */
+    --process-card-bg: 0 0% 100%; /* White */
+    --process-step-bg: 193 68% 55%; /* Brand teal */
+    --process-step-text: 0 0% 100%; /* White */
+    --process-card-title: 0 0% 0%; /* Black */
+    --process-card-desc: 0 0% 40%; /* Dark gray */
+    --process-arrow: 193 68% 55%; /* Brand teal */
+
+    /* Base theme colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 193 68% 55%; /* Brand teal */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 193 68% 95%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 193 68% 95%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 193 68% 90%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 193 68% 85%;
+    --input: 193 68% 85%;
+    --ring: 193 68% 55%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 193 68% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 193 68% 95%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 193 68% 85%;
+    --sidebar-ring: 193 68% 55%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Enhanced Animation Variables with Brand Colors */
+    --primary-teal: 193 68% 55%;
+    --primary-black: 0 0% 0%;
+    --brand-gradient: linear-gradient(
+      135deg,
+      hsl(var(--primary-teal)),
+      hsl(0 0% 20%)
+    );
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Animation Easings */
+    --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Spacing Scale */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 100%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 193 68% 55%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 193 68% 55%;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 193 68% 55%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 193 68% 55%;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Selection Styles with Brand Colors */
+  ::selection {
+    background: hsla(var(--brand-teal), 0.3);
+    color: hsl(var(--foreground));
+  }
+
+  /* Scrollbar Styling with Brand Colors */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--brand-teal));
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(193 68% 45%);
+  }
+}
+
+/* Modern Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsla(var(--brand-teal), 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsla(var(--brand-teal), 0.6);
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce-subtle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes scale-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* Logo Loading Animations */
+@keyframes logoAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-10deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes logoToNav {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(0.6) translate(-50vw, -40vh);
+  }
+}
+
+@keyframes circleExpand {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes textTypewriter {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* Utility Animation Classes */
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s var(--ease-out-expo) forwards;
+  }
+
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.6s var(--ease-out-cubic) forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s var(--ease-out-expo) forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s var(--ease-out-expo) forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s ease-in-out infinite;
+  }
+
+  .animate-scale-pulse {
+    animation: scale-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animate-logo-appear {
+    animation: logoAppear 1.5s var(--ease-out-expo) forwards;
+  }
+
+  .animate-logo-to-nav {
+    animation: logoToNav 1s var(--ease-out-expo) forwards;
+  }
+
+  .animate-circle-expand {
+    animation: circleExpand 0.8s var(--ease-out-expo) forwards;
+  }
+
+  .animate-text-typewriter {
+    animation: textTypewriter 1s var(--ease-out-expo) forwards;
+  }
+
+  /* Animation Delays */
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+  .animation-delay-700 {
+    animation-delay: 0.7s;
+  }
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  /* Brand Color Utilities */
+  .bg-brand-teal {
+    background-color: hsl(var(--brand-teal));
+  }
+  .text-brand-teal {
+    color: hsl(var(--brand-teal));
+  }
+  .border-brand-teal {
+    border-color: hsl(var(--brand-teal));
+  }
+
+  .bg-brand-black {
+    background-color: hsl(var(--brand-black));
+  }
+  .text-brand-black {
+    color: hsl(var(--brand-black));
+  }
+
+  .bg-brand-white {
+    background-color: hsl(var(--brand-white));
+  }
+  .text-brand-white {
+    color: hsl(var(--brand-white));
+  }
+
+  /* Glassmorphism Utilities with Brand Colors */
+  .glass {
+    background: rgba(65, 184, 213, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(65, 184, 213, 0.2);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Gradient Text Utilities with Brand Colors */
+  .gradient-text-brand {
+    background: linear-gradient(135deg, hsl(var(--brand-teal)), hsl(0 0% 20%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+  }
+
+  .gradient-text-brand-animated {
+    background: linear-gradient(135deg, hsl(var(--brand-teal)), hsl(0 0% 20%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Hover Effects with Brand Colors */
+  .hover-lift {
+    transition: transform 0.3s var(--ease-out-cubic),
+      box-shadow 0.3s var(--ease-out-cubic);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px hsla(var(--brand-teal), 0.2);
+  }
+
+  .hover-scale {
+    transition: transform 0.3s var(--ease-out-cubic);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .hover-glow-brand {
+    transition: box-shadow 0.3s var(--ease-out-cubic);
+  }
+
+  .hover-glow-brand:hover {
+    box-shadow: 0 0 30px hsla(var(--brand-teal), 0.4);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-gradient-shift,
+  .animate-rotate-slow,
+  .animate-bounce-subtle,
+  .animate-scale-pulse,
+  .animate-blob,
+  .animate-logo-appear,
+  .animate-logo-to-nav {
+    animation: none;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .gradient-text-brand,
+  .gradient-text-brand-animated {
+    -webkit-text-fill-color: initial;
+    color: hsl(var(--foreground));
   }
 }

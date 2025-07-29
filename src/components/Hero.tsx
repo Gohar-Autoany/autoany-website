@@ -1,73 +1,86 @@
-import { Button } from "@/components/ui/button";
-import automationDashboard from "@/assets/automation-dashboard.jpg";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
-      {/* Background gradient */}
-      <div 
-        className="absolute inset-0 animate-gradient-shift"
+    <section className="relative min-h-screen w-full overflow-hidden flex items-center">
+      {/* Clean Dark Background with Brand Colors */}
+      <div
+        className="absolute inset-0"
         style={{
-          background: 'linear-gradient(135deg, #0F0F23 0%, #1a1a2e 100%)',
-          backgroundSize: '200% 200%'
-        }}
-      />
-      
-      {/* Animated gradient mesh overlay */}
-      <div 
-        className="absolute inset-0 opacity-30 animate-gradient-shift"
-        style={{
-          background: 'radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.2) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(167, 139, 250, 0.2) 0%, transparent 50%)',
-          backgroundSize: '200% 200%'
+          background: "linear-gradient(135deg, #000000 0%, #1a1a1a 100%)",
         }}
       />
 
-      {/* Content container */}
-      <div className="relative max-w-[1400px] mx-auto px-8 py-0">
-        <div className="min-h-screen grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 lg:gap-12 items-center">
-          
-          {/* Left Column */}
-          <div className="flex flex-col justify-center space-y-6 lg:space-y-8">
-            <h1 className="text-4xl md:text-6xl lg:text-[4.5rem] font-extrabold leading-[1.1] text-hero-text mb-6">
-              Automate everything.{" "}
-              <span className="block">Achieve anything.</span>
-            </h1>
-            
-            <h2 className="text-lg md:text-xl lg:text-2xl font-normal leading-relaxed text-hero-text-muted max-w-[600px] mb-12">
-              Transform your business with intelligent automation solutions that streamline workflows, eliminate repetitive tasks, and unlock unprecedented efficiency across your entire organization.
-            </h2>
+      {/* Subtle Background Pattern with Brand Teal */}
+      <div className="absolute inset-0 opacity-10">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 25% 25%, #41B8D5 0%, transparent 50%),
+                            radial-gradient(circle at 75% 75%, #41B8D5 0%, transparent 50%)`,
+          }}
+        ></div>
+      </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg"
-                className="px-8 py-6 bg-hero-primary hover:bg-hero-primary/90 text-white font-semibold rounded-xl text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-hero-primary/25"
-              >
-                Start Automation
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="px-8 py-6 border-2 border-hero-glass text-hero-text font-semibold rounded-xl text-lg backdrop-blur-sm bg-hero-glass hover:bg-hero-glass/50 transition-all duration-300 hover:scale-105"
-              >
-                View Process
-              </Button>
-            </div>
+      {/* Floating Brand Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-20 w-32 h-32 bg-[#41B8D5]/20 rounded-full blur-xl animate-float"></div>
+        <div className="absolute bottom-32 right-32 w-48 h-48 bg-[#41B8D5]/15 rounded-full blur-2xl animate-float animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-[#41B8D5]/10 rounded-full blur-xl animate-float animation-delay-4000"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative max-w-4xl mx-auto px-8 text-center">
+        <div
+          className={`transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {/* Pre-header with Brand Colors */}
+          <div className="inline-flex items-center px-4 py-2 bg-[#41B8D5]/20 backdrop-blur-sm rounded-full text-[#41B8D5] font-medium mb-8 border border-[#41B8D5]/30">
+            We don't just build AI tools.
           </div>
 
-          {/* Right Column */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative animate-float">
-              <img
-                src={automationDashboard}
-                alt="Automation Dashboard Interface"
-                className="w-full max-w-lg lg:max-w-none rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.3)] transform transition-transform duration-300 hover:scale-105"
-              />
-              
-              {/* Glass effect overlay */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none" />
-            </div>
+          {/* Main Message */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-white mb-8">
+            We transform
+            <br />
+            <span
+              className="bg-gradient-to-r from-[#41B8D5] to-[#41B8D5]/70 bg-clip-text text-transparent"
+              style={{
+                backgroundSize: "200% 200%",
+                animation: "gradient-shift 4s ease infinite",
+              }}
+            >
+              entire businesses.
+            </span>
+          </h1>
+
+          {/* Tagline */}
+          <h2 className="text-3xl md:text-4xl font-light text-white/90 mb-8">
+            Automate everything. Achieve anything.
+          </h2>
+
+          {/* Partnership Statement */}
+          <p className="text-xl md:text-2xl text-white/70 leading-relaxed max-w-3xl mx-auto">
+            One trusted partner to guide you through your entire automation
+            journey.
+          </p>
+        </div>
+      </div>
+
+      {/* Scroll Indicator with Brand Colors */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="flex flex-col items-center space-y-2 text-white/60">
+          <span className="text-sm">Scroll to explore</span>
+          <div className="w-6 h-10 border-2 border-[#41B8D5]/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-[#41B8D5] rounded-full mt-2 animate-bounce"></div>
           </div>
         </div>
       </div>
