@@ -49,13 +49,15 @@ const ResultsStatement = () => {
       ref={sectionRef}
       className="py-32 bg-white text-center relative overflow-hidden"
     >
-      {/* Background Pattern with Brand Colors */}
-      <div className="absolute inset-0 opacity-5">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-30">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, #41B8D5 0%, transparent 50%),
-                            radial-gradient(circle at 75% 75%, #41B8D5 0%, transparent 50%)`,
+            backgroundImage: `
+            radial-gradient(circle at 25% 25%, rgba(65, 184, 213, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(65, 184, 213, 0.05) 0%, transparent 50%)
+          `,
           }}
         ></div>
       </div>
@@ -80,7 +82,7 @@ const ResultsStatement = () => {
             isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         >
-          <div className="bg-gradient-to-br from-[#41B8D5]/10 to-[#41B8D5]/5 rounded-3xl p-16 border-2 border-[#41B8D5]/20 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group mb-12 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-white to-[#41B8D5]/5 rounded-3xl p-16 border-2 border-[#41B8D5]/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group mb-12 relative overflow-hidden">
             {/* Background Glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#41B8D5]/5 to-transparent rounded-3xl group-hover:from-[#41B8D5]/10 transition-all duration-500"></div>
 
@@ -91,6 +93,13 @@ const ResultsStatement = () => {
               <div className="text-2xl md:text-3xl font-semibold text-black mb-6">
                 Saved for Clients This Year
               </div>
+
+              {/* Supporting Text */}
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
+                Real savings, measurable results, transformative impact. Every
+                dollar represents a process optimized and a business
+                transformed.
+              </p>
 
               {/* Decorative Elements */}
               <div className="flex justify-center space-x-4 opacity-60">
@@ -107,13 +116,13 @@ const ResultsStatement = () => {
           </div>
         </div>
 
-        {/* CTA with Brand Colors */}
+        {/* CTA */}
         <div
           className={`transition-all duration-1000 delay-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <button className="inline-flex items-center px-8 py-4 bg-[#41B8D5] hover:bg-[#41B8D5]/90 text-white font-semibold rounded-2xl text-lg hover:scale-105 transition-all duration-300 hover:shadow-xl hover-glow-brand group">
+          <button className="inline-flex items-center px-8 py-4 bg-[#41B8D5] hover:bg-[#41B8D5]/90 text-white font-semibold rounded-2xl text-lg hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-[#41B8D5]/25 group">
             <span className="mr-2">View Our Work</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
