@@ -25,7 +25,9 @@ const SimpleCTA = () => {
   return (
     <section
       ref={sectionRef}
+      id="why-autoany"
       className="py-32 bg-white relative overflow-hidden"
+      style={{ fontFamily: "'Glacial Indifference', sans-serif" }}
     >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-30">
@@ -64,10 +66,7 @@ const SimpleCTA = () => {
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
 
-          <button className="group px-8 py-4 bg-white border-2 border-[#41B8D5] text-[#41B8D5] hover:bg-[#41B8D5] hover:text-white font-semibold rounded-2xl text-lg hover:scale-105 transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl">
-            <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
-            <span>View Process</span>
-          </button>
+          
         </div>
 
         {/* Trust Indicators */}

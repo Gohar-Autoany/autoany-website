@@ -5,7 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import LogoLoadingAnimation from "@/components/LogoLoadingAnimation";
+import LogoLoader from "@/components/LogoLoader"; // ✅ use new loader
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Process from "@/components/Process";
@@ -16,18 +16,16 @@ import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const MainContent = () => {
-  return (
-    <>
-      <Navigation />
-      <Hero />
-      <Process />
-      <ResultsStatement />
-      <TrustBuilder />
-      <SimpleCTA />
-    </>
-  );
-};
+const MainContent = () => (
+  <>
+    <Navigation />
+    <Hero />
+    <Process />
+    <ResultsStatement />
+    <TrustBuilder />
+    <SimpleCTA />
+  </>
+);
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,20 +33,11 @@ const App = () => {
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
-    // Small delay to ensure smooth transition
-    setTimeout(() => {
-      setShowContent(true);
-    }, 500);
+    setTimeout(() => setShowContent(true), 500); // optional fade-in delay
   };
 
-  // Prevent scrolling during loading
   useEffect(() => {
-    if (isLoading) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-
+    document.body.style.overflow = isLoading ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
     };
@@ -60,10 +49,8 @@ const App = () => {
         <Toaster />
         <Sonner />
 
-        {/* Loading Animation */}
-        {isLoading && (
-          <LogoLoadingAnimation onComplete={handleLoadingComplete} />
-        )}
+        {/* Logo Animation Loader */}
+        {isLoading && <LogoLoader onComplete={handleLoadingComplete} />}
 
         {/* Main Website Content */}
         <div
