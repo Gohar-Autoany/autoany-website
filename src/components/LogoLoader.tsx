@@ -3,13 +3,13 @@ import logo from "@/assets/text logo main.png";
 
 const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
   const [stage, setStage] = useState(0);
-  
+
   // Choose your animation style here:
-  const ANIMATION_STYLE = "professional"; // Options: "professional", "glow", "blur-focus", "slide-up", "zoom-focus", "shimmer", "build", "pulse", "simple"
-  
+  const ANIMATION_STYLE: string = "professional"; // Options: "professional", "glow", "blur-focus", "slide-up", "zoom-focus", "shimmer", "build", "pulse", "simple"
+
   useEffect(() => {
     let timeouts: NodeJS.Timeout[] = [];
-    
+
     if (ANIMATION_STYLE === "build") {
       // Multi-stage build animation (3.5 seconds)
       timeouts = [
@@ -20,7 +20,7 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
         setTimeout(() => {
           setStage(5);
           onComplete();
-        }, 3500)
+        }, 3500),
       ];
     } else if (ANIMATION_STYLE === "professional") {
       // Clean professional animation (2.5 seconds)
@@ -30,7 +30,7 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
         setTimeout(() => {
           setStage(3);
           onComplete();
-        }, 2500)
+        }, 2500),
       ];
     } else if (ANIMATION_STYLE === "glow") {
       // Elegant glow effect (3 seconds)
@@ -41,7 +41,7 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
         setTimeout(() => {
           setStage(4);
           onComplete();
-        }, 3000)
+        }, 3000),
       ];
     } else if (ANIMATION_STYLE === "blur-focus") {
       // Blur to focus effect (2.5 seconds)
@@ -51,7 +51,7 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
         setTimeout(() => {
           setStage(3);
           onComplete();
-        }, 2500)
+        }, 2500),
       ];
     } else if (ANIMATION_STYLE === "slide-up") {
       // Slide up from bottom (2.3 seconds)
@@ -61,7 +61,7 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
         setTimeout(() => {
           setStage(3);
           onComplete();
-        }, 2300)
+        }, 2300),
       ];
     } else if (ANIMATION_STYLE === "zoom-focus") {
       // Zoom in from distance (2.8 seconds)
@@ -71,7 +71,7 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
         setTimeout(() => {
           setStage(3);
           onComplete();
-        }, 2800)
+        }, 2800),
       ];
     } else if (ANIMATION_STYLE === "pulse") {
       // Pulse animation (2.5 seconds)
@@ -81,7 +81,7 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
         setTimeout(() => {
           setStage(3);
           onComplete();
-        }, 2500)
+        }, 2500),
       ];
     } else if (ANIMATION_STYLE === "shimmer") {
       // Shimmer animation (2.5 seconds)
@@ -91,7 +91,7 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
         setTimeout(() => {
           setStage(3);
           onComplete();
-        }, 2500)
+        }, 2500),
       ];
     } else {
       // Simple animation (2 seconds)
@@ -100,7 +100,7 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
         setTimeout(() => {
           setStage(2);
           onComplete();
-        }, 2000)
+        }, 2000),
       ];
     }
 
@@ -122,17 +122,20 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
                 src={logo}
                 alt="autoany"
                 className={`w-80 h-auto transition-all duration-1000 ease-out ${
-                  stage >= 1 
+                  stage >= 1
                     ? stage >= 2
                       ? "opacity-100 scale-100 drop-shadow-lg"
                       : "opacity-60 scale-95"
                     : "opacity-0 scale-90"
                 }`}
                 style={{
-                  filter: stage >= 2 ? "drop-shadow(0 4px 20px rgba(65, 184, 213, 0.15))" : "none"
+                  filter:
+                    stage >= 2
+                      ? "drop-shadow(0 4px 20px rgba(65, 184, 213, 0.15))"
+                      : "none",
                 }}
               />
-              
+
               {/* Subtle professional glow */}
               {stage >= 2 && (
                 <div className="absolute inset-0 bg-gradient-to-br from-[#41B8D5]/5 via-transparent to-[#41B8D5]/5 rounded-lg blur-xl"></div>
@@ -157,14 +160,15 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
                   stage >= 1 ? "opacity-100 scale-100" : "opacity-0 scale-80"
                 }`}
                 style={{
-                  filter: stage >= 3 
-                    ? "drop-shadow(0 0 40px rgba(65, 184, 213, 0.4)) drop-shadow(0 0 80px rgba(65, 184, 213, 0.2))" 
-                    : stage >= 2
-                    ? "drop-shadow(0 0 20px rgba(65, 184, 213, 0.3))"
-                    : "none"
+                  filter:
+                    stage >= 3
+                      ? "drop-shadow(0 0 40px rgba(65, 184, 213, 0.4)) drop-shadow(0 0 80px rgba(65, 184, 213, 0.2))"
+                      : stage >= 2
+                      ? "drop-shadow(0 0 20px rgba(65, 184, 213, 0.3))"
+                      : "none",
                 }}
               />
-              
+
               {/* Expanding glow rings */}
               {stage >= 2 && (
                 <>
@@ -189,18 +193,19 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
               src={logo}
               alt="autoany"
               className={`w-80 h-auto transition-all duration-1500 ease-out ${
-                stage >= 1 
+                stage >= 1
                   ? stage >= 2
                     ? "opacity-100 scale-100"
                     : "opacity-100 scale-105"
                   : "opacity-0 scale-110"
               }`}
               style={{
-                filter: stage >= 2 
-                  ? "blur(0px) drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1))" 
-                  : stage >= 1
-                  ? "blur(8px)"
-                  : "blur(15px)"
+                filter:
+                  stage >= 2
+                    ? "blur(0px) drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1))"
+                    : stage >= 1
+                    ? "blur(8px)"
+                    : "blur(15px)",
               }}
             />
           </div>
@@ -217,14 +222,17 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
               src={logo}
               alt="autoany"
               className={`w-80 h-auto transition-all duration-1200 ease-out ${
-                stage >= 1 
+                stage >= 1
                   ? stage >= 2
                     ? "opacity-100 translate-y-0 scale-100"
                     : "opacity-80 translate-y-4 scale-95"
                   : "opacity-0 translate-y-16 scale-90"
               }`}
               style={{
-                filter: stage >= 2 ? "drop-shadow(0 8px 32px rgba(65, 184, 213, 0.15))" : "none"
+                filter:
+                  stage >= 2
+                    ? "drop-shadow(0 8px 32px rgba(65, 184, 213, 0.15))"
+                    : "none",
               }}
             />
           </div>
@@ -242,17 +250,20 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
                 src={logo}
                 alt="autoany"
                 className={`w-80 h-auto transition-all duration-1500 ease-out ${
-                  stage >= 1 
+                  stage >= 1
                     ? stage >= 2
                       ? "opacity-100 scale-100"
                       : "opacity-100 scale-150"
                     : "opacity-0 scale-200"
                 }`}
                 style={{
-                  filter: stage >= 2 ? "drop-shadow(0 4px 20px rgba(0, 0, 0, 0.08))" : "none"
+                  filter:
+                    stage >= 2
+                      ? "drop-shadow(0 4px 20px rgba(0, 0, 0, 0.08))"
+                      : "none",
                 }}
               />
-              
+
               {/* Mask overlay for zoom effect */}
               {stage < 2 && (
                 <div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
@@ -268,11 +279,16 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
               stage === 5 ? "opacity-0 pointer-events-none" : "opacity-100"
             }`}
             style={{
-              background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%)"
+              background:
+                "linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%)",
             }}
           >
             {/* Animated background */}
-            <div className={`absolute inset-0 transition-opacity duration-1000 ${stage >= 1 ? "opacity-100" : "opacity-0"}`}>
+            <div
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                stage >= 1 ? "opacity-100" : "opacity-0"
+              }`}
+            >
               <div className="absolute inset-0 opacity-5">
                 <div
                   className="absolute inset-0"
@@ -280,7 +296,7 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
                     backgroundImage: `
                       radial-gradient(circle at 20% 30%, #41B8D5 0%, transparent 50%),
                       radial-gradient(circle at 80% 70%, #41B8D5 0%, transparent 50%)
-                    `
+                    `,
                   }}
                 />
               </div>
@@ -290,9 +306,9 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
             <div className="relative flex flex-col items-center">
               <div
                 className={`transition-all duration-1000 ease-out ${
-                  stage >= 2 
-                    ? stage >= 3 
-                      ? "opacity-100 scale-110" 
+                  stage >= 2
+                    ? stage >= 3
+                      ? "opacity-100 scale-110"
                       : "opacity-100 scale-100"
                     : "opacity-0 scale-50"
                 }`}
@@ -302,10 +318,13 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
                   alt="autoany"
                   className="w-80 h-auto drop-shadow-2xl"
                   style={{
-                    filter: stage >= 3 ? "drop-shadow(0 0 40px rgba(65, 184, 213, 0.4))" : "none"
+                    filter:
+                      stage >= 3
+                        ? "drop-shadow(0 0 40px rgba(65, 184, 213, 0.4))"
+                        : "none",
                   }}
                 />
-                
+
                 {/* Shimmer effect */}
                 {stage >= 4 && (
                   <div className="absolute inset-0 overflow-hidden">
@@ -315,9 +334,19 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
               </div>
 
               {/* Loading text */}
-              <div className={`mt-8 transition-all duration-500 ${stage >= 2 && stage < 5 ? "opacity-100" : "opacity-0"}`}>
+              <div
+                className={`mt-8 transition-all duration-500 ${
+                  stage >= 2 && stage < 5 ? "opacity-100" : "opacity-0"
+                }`}
+              >
                 <p className="text-xl text-gray-600 font-medium">
-                  {stage === 2 ? "Loading autoany..." : stage === 3 ? "Preparing automation..." : stage === 4 ? "Ready!" : ""}
+                  {stage === 2
+                    ? "Loading autoany..."
+                    : stage === 3
+                    ? "Preparing automation..."
+                    : stage === 4
+                    ? "Ready!"
+                    : ""}
                 </p>
               </div>
             </div>
@@ -336,14 +365,14 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
                 src={logo}
                 alt="autoany"
                 className={`w-72 h-auto transition-all duration-1000 ${
-                  stage >= 1 
+                  stage >= 1
                     ? stage >= 2
                       ? "opacity-100 scale-100 animate-pulse"
                       : "opacity-100 scale-100"
                     : "opacity-0 scale-80"
                 }`}
               />
-              
+
               {/* Pulse rings */}
               {stage >= 2 && (
                 <>
@@ -371,7 +400,7 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
                   stage >= 1 ? "opacity-100 scale-100" : "opacity-0 scale-70"
                 }`}
               />
-              
+
               {/* Shimmer effect */}
               {stage >= 2 && (
                 <div className="absolute inset-0 overflow-hidden">
@@ -401,28 +430,7 @@ const LogoLoader = ({ onComplete }: { onComplete: () => void }) => {
     }
   };
 
-  return (
-    <>
-      {renderAnimation()}
-      
-      {/* CSS for animations */}
-      <style jsx>{`
-        @keyframes shimmer {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-        .animate-shimmer {
-          animation: shimmer 1.5s ease-in-out;
-        }
-        .animation-delay-500 {
-          animation-delay: 0.5s;
-        }
-        .animation-delay-1000 {
-          animation-delay: 1s;
-        }
-      `}</style>
-    </>
-  );
+  return <>{renderAnimation()}</>;
 };
 
 export default LogoLoader;

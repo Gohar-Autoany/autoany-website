@@ -22,27 +22,33 @@ const ResultsStatement = () => {
     return () => observer.disconnect();
   }, [isVisible]);
 
+  // Function to trigger the Navigation's contact form
+  const handleOpenContactForm = () => {
+    console.log("ResultsStatement: Dispatching openContactForm event");
+    window.dispatchEvent(new CustomEvent("openContactForm"));
+  };
+
   const impactAreas = [
     {
       icon: Zap,
       title: "Workflow Efficiency",
-      description: "Streamlined processes"
+      description: "Streamlined processes",
     },
     {
       icon: Target,
-      title: "Process Optimization", 
-      description: "Eliminated bottlenecks"
+      title: "Process Optimization",
+      description: "Eliminated bottlenecks",
     },
     {
       icon: TrendingUp,
       title: "Business Growth",
-      description: "Measurable outcomes"
+      description: "Measurable outcomes",
     },
     {
       icon: Clock,
       title: "Time Savings",
-      description: "Automated operations"
-    }
+      description: "Automated operations",
+    },
   ];
 
   return (
@@ -86,7 +92,9 @@ const ResultsStatement = () => {
           }`}
         >
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
-            Every automation we build is designed for measurable business impact. From streamlined workflows to eliminated bottlenecks, we focus on outcomes that truly matter to your bottom line.
+            Every automation we build is designed for measurable business
+            impact. From streamlined workflows to eliminated bottlenecks, we
+            focus on outcomes that truly matter to your bottom line.
           </p>
         </div>
 
@@ -99,10 +107,10 @@ const ResultsStatement = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             {impactAreas.map((area, index) => {
               const IconComponent = area.icon;
-              
+
               return (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="bg-gradient-to-br from-white to-[#41B8D5]/5 rounded-2xl p-8 border border-[#41B8D5]/10 hover:border-[#41B8D5]/20 transition-all duration-300 hover:shadow-lg group"
                 >
                   <div className="mb-4">
@@ -111,9 +119,7 @@ const ResultsStatement = () => {
                   <h3 className="text-lg font-semibold text-black mb-2">
                     {area.title}
                   </h3>
-                  <p className="text-sm text-gray-600">
-                    {area.description}
-                  </p>
+                  <p className="text-sm text-gray-600">{area.description}</p>
                 </div>
               );
             })}
@@ -137,16 +143,11 @@ const ResultsStatement = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <button 
-            onClick={() => {
-              const element = document.getElementById('process');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+          <button
+            onClick={handleOpenContactForm}
             className="inline-flex items-center px-8 py-4 bg-[#41B8D5] hover:bg-[#41B8D5]/90 text-white font-semibold rounded-lg text-lg hover:scale-105 transition-all duration-300 hover:shadow-lg group"
           >
-            <span className="mr-2">Learn More About Process</span>
+            <span className="mr-2">Start Your Transformation</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
         </div>
