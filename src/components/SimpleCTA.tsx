@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ArrowRight, Play } from "lucide-react";
 
-const SimpleCTA = () => {
+const SimpleCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -21,6 +21,12 @@ const SimpleCTA = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Function to trigger the Navigation's contact form
+  const handleOpenContactForm = () => {
+    console.log("SimpleCTA: Dispatching openContactForm event");
+    window.dispatchEvent(new CustomEvent("openContactForm"));
+  };
 
   return (
     <section
@@ -61,12 +67,13 @@ const SimpleCTA = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <button className="group px-8 py-4 bg-[#41B8D5] hover:bg-[#41B8D5]/90 text-white font-semibold rounded-2xl text-lg hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-[#41B8D5]/25 flex items-center justify-center">
+          <button
+            onClick={handleOpenContactForm}
+            className="group px-8 py-4 bg-[#41B8D5] hover:bg-[#41B8D5]/90 text-white font-semibold rounded-2xl text-lg hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-[#41B8D5]/25 flex items-center justify-center"
+          >
             <span className="mr-2">Get Started</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
-
-          
         </div>
 
         {/* Trust Indicators */}

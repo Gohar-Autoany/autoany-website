@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenContactForm: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onOpenContactForm }) => {
   const [typedText, setTypedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopIndex, setLoopIndex] = useState(0);
@@ -40,12 +44,6 @@ const Hero: React.FC = () => {
     }
   };
 
-  // Function to trigger the Navigation's contact form
-  const handleOpenContactForm = () => {
-    console.log("Hero: Dispatching openContactForm event");
-    window.dispatchEvent(new CustomEvent("openContactForm"));
-  };
-
   return (
     <section
       id="hero"
@@ -80,11 +78,20 @@ const Hero: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              onClick={handleOpenContactForm}
+              onClick={onOpenContactForm}
               size="lg"
               className="bg-[#41B8D5] hover:bg-[#41B8D5]/90 text-white font-semibold px-8 py-4 rounded-lg text-base transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Start Free Consultation
+            </Button>
+
+            <Button
+              onClick={() => handleSmoothScroll("process")}
+              variant="outline"
+              size="lg"
+              className="border-2 border-[#41B8D5] text-[#41B8D5] hover:bg-[#41B8D5] hover:text-white font-semibold px-8 py-4 rounded-lg text-base transition-all duration-300 hover:scale-105"
+            >
+              See Our Process
             </Button>
           </div>
         </div>
